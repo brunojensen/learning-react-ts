@@ -1,15 +1,22 @@
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import { Routes, Route } from 'react-router-dom';
+import { About } from '../about/About';
+import { Home } from '../home/Home';
+import { Layout } from '../layout/Layout';
+import { TodoList } from '../todoList/TodoList';
+
+function E404() {
+  return <h2>ERR 404</h2>;
+}
 
 export const App = () => {
   return (
-    <Container maxWidth="sm">
-      <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          React App with styled-components and TypeScript
-        </Typography>
-      </Box>
-    </Container>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="todos" element={<TodoList />} />
+        <Route path="about" element={<About />} />
+        <Route path="*" element={<E404 />} />
+      </Route>
+    </Routes>
   );
 };
