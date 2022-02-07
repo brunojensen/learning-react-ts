@@ -2,11 +2,7 @@
   "name": "learning-react-ts",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@emotion/react": "^11.7.1",
-    "@mui/icons-material": "^5.3.1",
-    "@mui/material": "^5.4.0",
-    "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest",
+  "devDependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -15,6 +11,16 @@
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
     "@types/react-router-dom": "^5.3.3",
+    "@types/styled-components": "^5.1.22",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.3",
+    "prettier": "2.5.1"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@mui/icons-material": "^5.3.1",
+    "@mui/material": "^5.4.0",
+    "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.1",
@@ -30,9 +36,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "lint": "yarn prettier --list-different './src/**/*.{js,ts,tsx}'",
-    "lint-write": "prettier --write ."
+    "lint-write": "prettier --write .",
+    "dockerize": "yarn install && yarn build && docker build -t $npm_package_name:$npm_package_version ."
   },
   "eslintConfig": {
     "extends": [
@@ -51,12 +57,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@types/styled-components": "^5.1.22",
-    "husky": "^7.0.4",
-    "lint-staged": "^12.3.3",
-    "prettier": "2.5.1"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
