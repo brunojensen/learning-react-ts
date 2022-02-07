@@ -24,6 +24,9 @@ export const Nav = () => {
             <Button component={NavLink} to="/todos">
               Todo
             </Button>
+            <Button component={NavLink} to="/giphy-search">
+              Giphy Search
+            </Button>
             <Button component={NavLink} to="/about">
               About
             </Button>
