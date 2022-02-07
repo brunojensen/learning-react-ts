@@ -2,7 +2,7 @@
   "name": "learning-react-ts",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://brunojensen.github.io/react",
+  "homepage": "https://brunojensen.github.io/learning-react-ts",
   "devDependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
