@@ -27,7 +27,6 @@ export const GiphySearch = () => {
     gifs = (
       await gf.search(userInput, { sort: 'relevant', limit: 9, type: 'gifs' })
     ).data;
-    console.log(gifs);
     setUserInput('');
     setGifs(gifs);
   };

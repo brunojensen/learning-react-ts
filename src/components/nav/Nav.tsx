@@ -21,6 +21,9 @@ export const Nav = () => {
                 <RocketIcon fontSize="large" color="disabled" />
               </NavLink>
             </Typography>
+            <Button component={NavLink} to="/blog">
+              Blog
+            </Button>
             <Button component={NavLink} to="/todos">
               Todo
             </Button>
