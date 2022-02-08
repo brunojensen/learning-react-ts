@@ -1,3 +1,11 @@
+export type MicroblogPayload = {
+  data: {
+    microblogCollection: {
+      items: Post[];
+    };
+  };
+};
+
 export type Post = {
   title: string;
   text: string;

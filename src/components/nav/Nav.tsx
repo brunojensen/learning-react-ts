@@ -1,5 +1,13 @@
-import { AppBar, Container, Toolbar, Typography, Button } from '@mui/material';
-import { Rocket as RocketIcon } from '@mui/icons-material';
+import {
+  AppBar,
+  Container,
+  Toolbar,
+  Typography,
+  Button,
+  Link,
+  Box,
+} from '@mui/material';
+import { GitHub, Rocket as RocketIcon } from '@mui/icons-material';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -12,7 +20,6 @@ export const Nav = () => {
         <Container maxWidth="lg">
           <Toolbar disableGutters>
             <Typography
-              variant="h6"
               noWrap
               component="div"
               sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
@@ -21,18 +28,31 @@ export const Nav = () => {
                 <RocketIcon fontSize="large" color="disabled" />
               </NavLink>
             </Typography>
-            <Button component={NavLink} to="/blog">
-              Blog
-            </Button>
-            <Button component={NavLink} to="/todos">
-              Todo
-            </Button>
-            <Button component={NavLink} to="/giphy-search">
-              Giphy Search
-            </Button>
-            <Button component={NavLink} to="/about">
-              About
-            </Button>
+            <Box sx={{ flexGrow: 1 }}>
+              <Button component={NavLink} to="/blog">
+                Blog
+              </Button>
+              <Button component={NavLink} to="/todos">
+                Todo
+              </Button>
+              <Button component={NavLink} to="/giphy-search">
+                Giphy Search
+              </Button>
+              <Button component={NavLink} to="/about">
+                About
+              </Button>
+            </Box>
+            <Box sx={{ flexGrow: 0 }}>
+              <Typography noWrap component="div">
+                <Link
+                  target="_blank"
+                  href="https://github.com/brunojensen/learning-react-ts"
+                  rel="noreferrer"
+                >
+                  <GitHub />
+                </Link>
+              </Typography>
+            </Box>
           </Toolbar>
         </Container>
       </AppBar>

@@ -48,6 +48,22 @@ export const TodoList = () => {
       <Typography variant="h5" gutterBottom component="div">
         Todo
       </Typography>
+      <Stack
+        component="form"
+        onSubmit={addTodoItem}
+        noValidate
+        autoComplete="off"
+        spacing={2}
+      >
+        <TextField
+          value={userInput}
+          onChange={changeUserInput}
+          required
+          id="outlined-required"
+          label="TODO"
+          helperText="Press <Enter> to add"
+        />
+      </Stack>
       <List>
         {todos.map((item: Todo) => {
           const labelId = `checkbox-list-label-${item.id}`;
@@ -74,24 +90,6 @@ export const TodoList = () => {
           );
         })}
       </List>
-      <Stack
-        component="form"
-        onSubmit={addTodoItem}
-        noValidate
-        autoComplete="off"
-        spacing={2}
-      >
-        <TextField
-          value={userInput}
-          onChange={changeUserInput}
-          required
-          id="outlined-required"
-          label="TODO"
-        />
-        <Button variant="contained" type="submit">
-          Add
-        </Button>
-      </Stack>
     </>
   );
 };
