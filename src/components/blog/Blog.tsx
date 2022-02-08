@@ -12,10 +12,11 @@ import Moment from 'react-moment';
 
 export const Blog = () => {
   const [posts, setPosts] = useState<Post[]>([]);
-  const CONTENTFUL_SPACE_ID = process.env.REACT_APP_CONTENTFUL_SPACE_ID ?? '';
-  const API_KEY = process.env.REACT_APP_CONTENTFUL_SPACE_DELIVERY_API_KEY ?? '';
 
   useEffect(() => {
+    const CONTENTFUL_SPACE_ID = process.env.REACT_APP_CONTENTFUL_SPACE_ID;
+    const API_KEY = process.env.REACT_APP_CONTENTFUL_SPACE_DELIVERY_API_KEY;
+
     fetch(
       `https://graphql.contentful.com/content/v1/spaces/${CONTENTFUL_SPACE_ID}/`,
       {

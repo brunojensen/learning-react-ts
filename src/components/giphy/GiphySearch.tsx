@@ -1,5 +1,5 @@
 import { Gif } from '@giphy/react-components';
-import { GifsResult, GiphyFetch } from '@giphy/js-fetch-api';
+import { GiphyFetch } from '@giphy/js-fetch-api';
 import { IGif } from '@giphy/js-types';
 import { ImageList, ImageListItem, TextField, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';

@@ -1,7 +1,5 @@
 import {
-  Button,
   Checkbox,
-  Container,
   List,
   ListItem,
   ListItemButton,
@@ -11,7 +9,6 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import { Box } from '@mui/system';
 import { useState } from 'react';
 
 export type Todo = {

@@ -1,5 +1,4 @@
-import { GitHub } from '@mui/icons-material';
-import { Link, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 
 export const About = () => {
   return (
