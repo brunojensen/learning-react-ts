@@ -43,7 +43,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "lint": "yarn prettier --list-different './src/**/*.{js,ts,tsx}'",
-    "lint-write": "prettier --write .",
+    "lint-write": "yarn prettier --write './src/**/*.{js,ts,tsx}'",
     "dockerize": "yarn install && yarn build && docker build -t $npm_package_name:$npm_package_version .",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"

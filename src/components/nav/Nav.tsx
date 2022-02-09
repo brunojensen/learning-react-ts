@@ -19,16 +19,15 @@ export const Nav = () => {
       <AppBar position="fixed">
         <Container maxWidth="lg">
           <Toolbar disableGutters>
-            <Typography
-              noWrap
-              component="div"
-              sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-            >
+            <Typography noWrap component="div" sx={{ mr: 2 }}>
               <NavLink to="/">
                 <RocketIcon fontSize="large" color="disabled" />
               </NavLink>
             </Typography>
             <Box sx={{ flexGrow: 1 }}>
+              <Button component={NavLink} to="/board">
+                Board
+              </Button>
               <Button component={NavLink} to="/todos">
                 Todo
               </Button>
@@ -39,7 +38,7 @@ export const Nav = () => {
                 About
               </Button>
             </Box>
-            <Box sx={{ flexGrow: 0 }}>
+            <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
               <Typography noWrap component="div">
                 <Link
                   target="_blank"
