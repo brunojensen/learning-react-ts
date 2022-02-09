@@ -39,35 +39,35 @@ export const Blog = () => {
       <Typography variant="h5" gutterBottom component="div">
         Blog
       </Typography>
-      <Container>
-        {posts.map((item: Post) => {
-          return (
-            <Card key={item.title} sx={{ m: '10px' }}>
-              {item.image ? (
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image={item?.image?.url}
-                  alt={item?.image?.title}
-                />
-              ) : (
-                <span />
-              )}
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  {item.title}
-                </Typography>
-                <Typography variant="body1" color="text.secondary">
-                  {item.text}
-                </Typography>
-                <Typography variant="caption" color="text.disabled">
-                  <Moment format="DD/MM/YYYY">{item.publishedAt}</Moment>
-                </Typography>
-              </CardContent>
-            </Card>
-          );
-        })}
-      </Container>
+      {posts.map((item: Post) => {
+        return (
+          <Card key={item.title} sx={{ m: '10px' }}>
+            {item.image ? (
+              <CardMedia
+                component="img"
+                height="200"
+                image={item?.image?.url}
+                alt={item?.image?.title}
+              />
+            ) : (
+              <Typography variant="body1" gutterBottom component="div">
+                Nothing to show here :(
+              </Typography>
+            )}
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                {item.title}
+              </Typography>
+              <Typography variant="body1" color="text.secondary">
+                {item.text}
+              </Typography>
+              <Typography variant="caption" color="text.disabled">
+                <Moment format="DD/MM/YYYY">{item.publishedAt}</Moment>
+              </Typography>
+            </CardContent>
+          </Card>
+        );
+      })}
     </>
   );
 };
