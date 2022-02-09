@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom';
 import { About } from '../about/About';
 import { Blog } from '../blog/Blog';
 import { GiphySearch } from '../giphy/GiphySearch';
-import { Home } from '../home/Home';
 import { Layout } from '../layout/Layout';
 import { TodoList } from '../todo/TodoList';
 
@@ -14,9 +13,8 @@ export const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
+        <Route index element={<Blog />} />
         <Route path="todos" element={<TodoList />} />
-        <Route path="blog" element={<Blog />} />
         <Route path="giphy-search" element={<GiphySearch />} />
         <Route path="about" element={<About />} />
         <Route path="*" element={<E404 />} />
