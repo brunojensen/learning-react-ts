@@ -51,6 +51,7 @@ export const TodoList = () => {
         noValidate
         autoComplete="off"
         spacing={2}
+        sx={{ mb: 1 }}
       >
         <TextField
           value={userInput}

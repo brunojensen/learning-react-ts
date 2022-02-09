@@ -1,4 +1,11 @@
-import { Box, Grid, Stack, TextField, Typography } from '@mui/material';
+import {
+  Box,
+  Stack,
+  Grid,
+  TextField,
+  Typography,
+  Divider,
+} from '@mui/material';
 import { useState } from 'react';
 import { BoardCard } from './BoardCard';
 import { Ticket, TicketStatus } from './schema/Schema';
@@ -48,6 +55,7 @@ export const Board = () => {
         noValidate
         autoComplete="off"
         spacing={2}
+        sx={{ mb: 1 }}
       >
         <TextField
           value={userInput}

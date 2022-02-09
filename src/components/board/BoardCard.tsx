@@ -12,7 +12,7 @@ export const BoardCard = (props: any) => {
   const changeStatus = props.changeStatus;
 
   return (
-    <Card key={ticket.id} sx={{ mb: '10px' }}>
+    <Card key={ticket.id} sx={{ mb: 1 }}>
       <CardContent>
         <Typography
           variant="body1"
@@ -21,7 +21,7 @@ export const BoardCard = (props: any) => {
         >
           TCKT-{ticket.id}
         </Typography>
-        <Typography variant="body1" color="text.secondary">
+        <Typography variant="body1" color="text.secondary" gutterBottom>
           {ticket.text}
         </Typography>
       </CardContent>

@@ -5,7 +5,7 @@ import { Post } from './schema/Schema';
 export const PostCard = (props: any) => {
   const post: Post = props?.post;
   return (
-    <Card key={post.title} sx={{ mb: '10px' }}>
+    <Card key={post.title} sx={{ mb: 1 }}>
       {post.image ? (
         <CardMedia
           component="img"
