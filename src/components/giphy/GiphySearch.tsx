@@ -1,7 +1,14 @@
 import { Gif } from '@giphy/react-components';
 import { GiphyFetch } from '@giphy/js-fetch-api';
 import { IGif } from '@giphy/js-types';
-import { ImageList, ImageListItem, TextField, Typography } from '@mui/material';
+import {
+  Box,
+  Container,
+  ImageList,
+  ImageListItem,
+  TextField,
+  Typography,
+} from '@mui/material';
 import { useEffect, useState } from 'react';
 
 const GIPHY_API_KEY = process.env.REACT_APP_GIPHY_API_KEY ?? '';
@@ -16,7 +23,7 @@ export const GiphySearch = () => {
   };
 
   useEffect(() => {
-    gf.search(userInput, { sort: 'recent', limit: 9, type: 'gifs' }).then(
+    gf.search(userInput, { sort: 'relevant', limit: 12, type: 'gifs' }).then(
       ({ data }) => {
         setGifs(data);
       }
@@ -37,13 +44,27 @@ export const GiphySearch = () => {
         helperText="Type to search"
         sx={{ width: '100%' }}
       />
-      <ImageList cols={3} rowHeight={164}>
-        {gifs.map((item) => (
-          <ImageListItem key={item.id}>
-            <Gif gif={item} width={300} />
-          </ImageListItem>
-        ))}
-      </ImageList>
+      <Container maxWidth="lg" sx={{ display: { xs: 'none', md: 'flex' } }}>
+        <ImageList cols={3} rowHeight={300}>
+          {gifs.map((item) => (
+            <ImageListItem key={item.id}>
+              <Gif gif={item} width={300} />
+            </ImageListItem>
+          ))}
+        </ImageList>
+      </Container>
+      <Container
+        maxWidth="xl"
+        sx={{ display: { xs: 'root-flow', md: 'none' } }}
+      >
+        <ImageList cols={1} rowHeight={300}>
+          {gifs.map((item) => (
+            <ImageListItem key={item.id}>
+              <Gif gif={item} width={300} />
+            </ImageListItem>
+          ))}
+        </ImageList>
+      </Container>
     </>
   );
 };
