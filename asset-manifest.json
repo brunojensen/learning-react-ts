@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/learning-react-ts/static/js/main.b75e68da.js",
+    "main.js": "/learning-react-ts/static/js/main.f1106485.js",
     "static/js/787.16c90c77.chunk.js": "/learning-react-ts/static/js/787.16c90c77.chunk.js",
     "index.html": "/learning-react-ts/index.html",
-    "main.b75e68da.js.map": "/learning-react-ts/static/js/main.b75e68da.js.map",
+    "main.f1106485.js.map": "/learning-react-ts/static/js/main.f1106485.js.map",
     "787.16c90c77.chunk.js.map": "/learning-react-ts/static/js/787.16c90c77.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.b75e68da.js"
+    "static/js/main.f1106485.js"
   ]
 }
