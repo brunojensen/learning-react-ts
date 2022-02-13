@@ -1,16 +1,9 @@
-import {
-  Box,
-  Stack,
-  Grid,
-  TextField,
-  Typography,
-  Divider,
-} from '@mui/material';
-import { useState } from 'react';
+import { Box, Stack, Grid, TextField, Typography } from '@mui/material';
+import { memo, useState } from 'react';
 import { BoardCard } from './BoardCard';
 import { Ticket, TicketStatus } from './schema/Schema';
 
-export const Board = () => {
+export const Board = memo(() => {
   let [tickets, setTickets] = useState<Ticket[]>([]);
   const [userInput, setUserInput] = useState('');
 
@@ -135,4 +128,4 @@ export const Board = () => {
       </Box>
     </>
   );
-};
+});

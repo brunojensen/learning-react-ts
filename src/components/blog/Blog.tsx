@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { Typography } from '@mui/material';
 import { PostCard } from './PostCard';
 import { fetchPosts } from './graphql/FetchPosts';
 import { Post } from './schema/Schema';
 
-export const Blog = () => {
+export const Blog = memo(() => {
   const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
@@ -21,4 +21,4 @@ export const Blog = () => {
       })}
     </>
   );
-};
+});

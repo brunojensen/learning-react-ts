@@ -2,19 +2,18 @@ import { Gif } from '@giphy/react-components';
 import { GiphyFetch } from '@giphy/js-fetch-api';
 import { IGif } from '@giphy/js-types';
 import {
-  Box,
   Container,
   ImageList,
   ImageListItem,
   TextField,
   Typography,
 } from '@mui/material';
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 
 const GIPHY_API_KEY = process.env.REACT_APP_GIPHY_API_KEY ?? '';
 const gf = new GiphyFetch(GIPHY_API_KEY);
 
-export const GiphySearch = () => {
+export const GiphySearch = memo(() => {
   const [userInput, setUserInput] = useState('');
   let [gifs, setGifs] = useState<IGif[]>([]);
 
@@ -67,4 +66,4 @@ export const GiphySearch = () => {
       </Container>
     </>
   );
-};
+});

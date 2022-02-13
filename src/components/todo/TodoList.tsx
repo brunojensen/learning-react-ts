@@ -9,7 +9,7 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 
 export type Todo = {
   id: number;
@@ -17,7 +17,7 @@ export type Todo = {
   checked: boolean;
 };
 
-export const TodoList = () => {
+export const TodoList = memo(() => {
   let [todos, setTodos] = useState<Todo[]>([]);
   const [userInput, setUserInput] = useState('');
 
@@ -90,4 +90,4 @@ export const TodoList = () => {
       </List>
     </>
   );
-};
+});
