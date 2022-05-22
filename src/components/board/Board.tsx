@@ -1,6 +1,6 @@
 import { Box, Stack, Grid, TextField, Typography } from '@mui/material';
 import { memo, useState } from 'react';
-import { BoardCard } from './BoardCard';
+import { BoardCard } from './card/BoardCard';
 import { Ticket, TicketStatus } from './schema/Schema';
 
 export const Board = memo(() => {

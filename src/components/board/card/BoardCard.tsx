@@ -5,11 +5,12 @@ import {
   CardContent,
   Typography,
 } from '@mui/material';
-import { Ticket, TicketStatus } from './schema/Schema';
+import { Ticket, TicketStatus } from '../schema/Schema';
 
 export const BoardCard = (props: any) => {
   const ticket: Ticket = props.ticket;
   const changeStatus = props.changeStatus;
+  const editCard = (ticket: Ticket) => () => {};
 
   return (
     <Card key={ticket.id} sx={{ mb: 1 }}>
@@ -27,13 +28,23 @@ export const BoardCard = (props: any) => {
       </CardContent>
       <CardActions>
         {ticket.status === TicketStatus.TODO ? (
-          <Button size="small" onClick={changeStatus(ticket)}>
-            MOVE TO PROGRESS
-          </Button>
+          <>
+            <Button size="small" onClick={editCard(ticket)}>
+              Edit
+            </Button>
+            <Button size="small" onClick={changeStatus(ticket)}>
+              MOVE TO PROGRESS
+            </Button>
+          </>
         ) : ticket.status === TicketStatus.IN_PROGRESS ? (
-          <Button size="small" onClick={changeStatus(ticket)}>
-            MOVE TO DONE
-          </Button>
+          <>
+            <Button size="small" onClick={editCard(ticket)}>
+              Edit
+            </Button>
+            <Button size="small" onClick={changeStatus(ticket)}>
+              MOVE TO DONE
+            </Button>
+          </>
         ) : (
           <Typography variant="caption" color="text.disabled">
             DONE
