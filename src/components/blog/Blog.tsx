@@ -14,7 +14,7 @@ export const Blog = memo(() => {
   return (
     <>
       <Typography variant="h5" gutterBottom component="div">
-        Blog
+        Blog v2
       </Typography>
       {posts.map((item: Post) => {
         return <PostCard post={item} />;

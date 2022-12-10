@@ -16,7 +16,7 @@ export const Nav = () => {
 
   return (
     <>
-      <AppBar position="fixed">
+      <AppBar>
         <Container maxWidth="lg">
           <Toolbar disableGutters>
             <Typography noWrap component="div" sx={{ mr: 2 }}>
